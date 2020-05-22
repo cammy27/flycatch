@@ -1,0 +1,32 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+<div class="main_body">
+    <div class="heading">
+        Posts
+    </div>
+<div class="container card" *ngFor="let post of details ; index as i">
+    <div class="row title" >
+        {{post.title}}
+     </div>
+     <div class="row body">
+        {{post.body}}
+     </div>
+     <button (click)="comments(post.id,i)" class="comments">Comments</button>
+     <div *ngIf="show[i] && !hide">
+         <div *ngFor="let user_comments of post_comment">
+             <div class="row detailed_comments">
+                 <div class="col-sm-4 comments_details">
+                     <div class="row comments_name">{{user_comments.name}}</div>
+                     <div class="row comments_email"> {{user_comments.email}}</div>
+                 </div>
+                 <div class="col-sm-8 comments_body">
+                    {{user_comments.body}}
+                 </div>
+             </div>
+         </div>
+     </div>
+</div>
+</div>
+

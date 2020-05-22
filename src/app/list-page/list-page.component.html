@@ -1,0 +1,23 @@
+<div class="list_page">
+  <div class="heading">
+    List of the People
+  </div>
+  <div class="lists">
+    <table class="table">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Name</th>
+            <th scope="col">Username</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let list of lists" (click)="details(list.id)">
+            <th scope="row">{{list.id}}</th>
+            <td>{{list.name}}</td>
+            <td>{{list.username}}</td>
+          </tr>
+        </tbody>
+      </table>  
+  </div>
+</div>

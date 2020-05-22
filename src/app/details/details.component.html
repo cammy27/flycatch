@@ -1,0 +1,44 @@
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+
+<div class="container main_body">
+    <div class="row heading">
+        Profile Page
+    </div>
+    <div class="row about">
+        About:
+    </div>
+    <div class="row" style="padding-top: 2%;">
+        <div class="col-sm-6">
+          <div class="content"> <span class="name_title">Name:</span> {{details['name']}}</div> 
+          <div class="content"><span  class="name_title">Username: </span>{{details['username']}}</div>
+          <div class="content"><span  class="name_title">Suite Number: </span>{{details['address']['suite']}}</div>
+          <div class="content"><span  class="name_title">City: </span>{{details['address']['city']}}</div>
+        </div>
+        <div class="col-sm-6">
+            <div class="content"><span  class="name_title">Email:</span>{{details['email']}}</div>
+            <div class="content"><span  class="name_title">Phone Number:</span> {{details['phone']}}</div>
+            <div class="content"><span  class="name_title">Street Name: </span>{{details['address']['street']}}</div>
+            <div class="content"><span  class="name_title">Zip code: </span>{{details['address']['zipcode']}}</div>
+        </div>
+    </div>
+    <div class="row about">
+        Career:
+    </div>
+    <div class="col phrase">
+       "{{details['company']['catchPhrase']}} "
+    </div>
+    <div class="row" style="padding-left: 16px;">
+        <div class="col-6 content">
+            <span  class="name_title">Company:</span>{{details['company']['name']}}
+        </div>
+        <div class="col-6 content">
+            <span  class="name_title">Website:</span>{{details['website']}}
+        </div>
+    </div>
+    <button (click)="post_details()" class="post">Check out the Posts</button>
+   
+</div>
