@@ -26,7 +26,6 @@ comments(id,index){
   this.hide= !this.hide;
   this.show[index] = true;
   localStorage.setItem('previous_index',index);
-  // this.show[index] =false;
   this.postservice.comments(id).subscribe(data=>{
   console.log(data);
   this.post_comment= data;
@@ -42,17 +41,9 @@ comments(id,index){
   this.postservice.postsdetails(this.userID).subscribe(data=>{
     console.log("the post posted are:"+ JSON.stringify(data));
     this.details=data;;
-  
-    // console.log("the title is" +this.post_details['title']);
   })
     console.log(this.userID);
   }
 
 }
-export interface User {
-  id: number; // Added
-  name: string;
-  email: string;
-  body: string;
-  comments:string;
-}
+
