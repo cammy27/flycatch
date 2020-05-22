@@ -13,21 +13,28 @@ export class PostDetailsComponent implements OnInit {
   post_comment: Object;
   show: {[key: number]: boolean} = {};
   hide:boolean =true;
+  previous: any;
 
   constructor(private activatedroute: ActivatedRoute,private postservice:PostsService,private router:Router) { }
 
 comments(id,index){
+  this.previous=localStorage.getItem('previous_index');
+  console.log(this.previous)
+  this.show[this.previous] =false;
   console.log("the post id is:"+id);
   console.log("the index id is:" + index);
   this.hide= !this.hide;
   this.show[index] = true;
+  localStorage.setItem('previous_index',index);
   // this.show[index] =false;
   this.postservice.comments(id).subscribe(data=>{
   console.log(data);
   this.post_comment= data;
   console.log(this.post_comment['body'])
   })
-  this.show[index]=false;
+  function refreshPage(){
+    window.location.reload();
+} 
 }
 
   ngOnInit() {

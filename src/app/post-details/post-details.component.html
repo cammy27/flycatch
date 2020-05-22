@@ -13,7 +13,7 @@
      <div class="row body">
         {{post.body}}
      </div>
-     <button (click)="comments(post.id,i)" class="comments">Comments</button>
+     <button (click)="comments(post.id,i)"  class="comments">Comments</button>
      <div *ngIf="show[i] && !hide">
          <div *ngFor="let user_comments of post_comment">
              <div class="row detailed_comments">
